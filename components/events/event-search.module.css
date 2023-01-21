@@ -1,0 +1,71 @@
+.form {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: white;
+  max-width: 40rem;
+  width: 90%;
+  justify-content: space-between;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+  
+.controls {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+  
+.control {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+  
+.control label {
+  font-weight: bold;
+  color: #3f3d3d;
+}
+  
+.control select {
+    font: inherit;
+    background-color: white;
+    color: #3f3d3d;
+    border-radius: 6px;
+    width: 70%;
+    padding: 0.25rem;
+  }
+  
+.form button {
+  width: 100%;
+  font: inherit;
+  padding: 0.25rem 0.5rem;
+  background-color: #03be9f;
+  border: 1px solid #03be9f;
+  color: #dafff7;
+  border-radius: 4px;
+}
+  
+@media (min-width: 768px) {
+  .form {
+    flex-direction: row;
+  }
+  
+  .controls {
+    flex-direction: row;
+    width: 80%;
+  }
+  
+  .control select {
+    width: 100%;
+  }
+  
+  .form button {
+    width: 20%;
+  }
+}
