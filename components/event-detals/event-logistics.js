@@ -9,6 +9,7 @@ function EventLogistics({ date, address, image, imageAlt }) {
     month: "long",
     year: "numeric",
   });
+
   const addressText = address.replace(", ", "\n");
 
   return (
