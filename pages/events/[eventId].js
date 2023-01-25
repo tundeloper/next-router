@@ -1,4 +1,3 @@
-import AllEvent from ".";
 import EventContent from "../../components/event-detals/event-content";
 import EventLogistics from "../../components/event-detals/event-logistics";
 import EventSummary from "../../components/event-detals/event-summary";

@@ -1,7 +1,6 @@
 import Button from "../ui/button";
 import classes from "./result-title.module.css";
 const ResultTitle = ({ date }) => {
-  console.log(date);
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     month: "long",
     year: "numeric",
