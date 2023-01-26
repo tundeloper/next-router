@@ -6,6 +6,7 @@ import Button from "../../components/ui/button";
 import ErrorMessage from "../../components/ui/error-message";
 import { getFilteredEvents } from "../../helpers/api-util";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 const Filtered = (props) => {
   const [event, setEvent] = useState();
@@ -35,9 +36,17 @@ const Filtered = (props) => {
     }
   }, [data]);
 
+  let pageHeadData = (
+    <Head>
+      <title>filtered events</title>
+      <meta name="description" content={"A list of filtered event"} />
+    </Head>
+  );
+
   if (!event) {
     return (
       <>
+        {pageHeadData}
         <ErrorMessage>
           <p>Loading</p>
         </ErrorMessage>
@@ -47,6 +56,16 @@ const Filtered = (props) => {
 
   const filteredYear = +filteredData[0];
   const filteredMonth = +filteredData[1];
+
+  pageHeadData = (
+    <Head>
+      <title>filtered events</title>
+      <meta
+        name="description"
+        content={`All event for ${filteredYear} / ${filteredMonth}`}
+      />
+    </Head>
+  );
 
   const filteredEvents = event.filter((event) => {
     const eventDate = new Date(event.date);
@@ -66,6 +85,7 @@ const Filtered = (props) => {
   ) {
     return (
       <>
+        {pageHeadData}
         <ErrorMessage>
           <p>Invalid filter, please adjust your value</p>
         </ErrorMessage>
