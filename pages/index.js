@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import EventList from "../components/events/event-list";
 // import { getAllEvents, getFeaturedEvents } from "../dummy-data";
 import { getFeaturedEvents } from "../helpers/api-util";
+import NewsletterRegistration from "../components/input/newsletter-registration";
 
 export default function Home({ events }) {
   getFeaturedEvents();
@@ -20,6 +21,7 @@ export default function Home({ events }) {
       </Head>
 
       <main className={styles.main}>
+        <NewsletterRegistration />
         <EventList items={events} />
       </main>
     </div>
