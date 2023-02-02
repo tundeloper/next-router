@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 function handler(req, res) {
-  const { eventId } = req.query;
+  // const [comment, setComments] = useState;
+  // const { eventId } = req.query;
+  let newComment;
   const { email, name, text } = req.body;
   if (req.method === "POST") {
     if (
@@ -14,7 +18,7 @@ function handler(req, res) {
       return;
     }
 
-    const newComment = {
+    newComment = {
       id: new Date().toDateString(),
       name,
       email,
@@ -39,6 +43,7 @@ function handler(req, res) {
         email: "loper@gmail.com",
         text: "second comment",
       },
+      // newComment,
     ];
 
     res.status(201).json({ comments: dummyList });

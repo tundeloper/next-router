@@ -20,7 +20,7 @@ function Comments(props) {
           setComments(data.comments);
         });
     }
-  }, [showComments]);
+  }, [showComments, eventId]);
 
   function toggleCommentsHandler() {
     setShowComments((prevStatus) => !prevStatus);
@@ -42,7 +42,7 @@ function Comments(props) {
     })
       .then((response) => {
         if (response.ok) {
-          response.json();
+          return response.json();
         }
         return response.ok.then((error) => {
           throw new Error(error.message || "something went wrong");
@@ -50,6 +50,18 @@ function Comments(props) {
       })
       .then((data) => {
         console.log(data);
+        notificatioCtx.showNotification({
+          title: "success",
+          message: "Your comment was stored",
+          status: "success",
+        });
+      })
+      .catch((error) => {
+        notificatioCtx.showNotification({
+          title: "Error",
+          message: error.message,
+          status: "error ",
+        });
       });
   }
 
