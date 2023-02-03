@@ -1,8 +1,6 @@
 import Head from "next/head";
-// import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import EventList from "../components/events/event-list";
-// import { getAllEvents, getFeaturedEvents } from "../dummy-data";
 import { getFeaturedEvents } from "../helpers/api-util";
 import NewsletterRegistration from "../components/input/newsletter-registration";
 
