@@ -37,3 +37,4 @@ export const getStaticProps = async () => {
 };
 
 // https://heroicons.com
+// https:/api.adviceslip.com/advice
